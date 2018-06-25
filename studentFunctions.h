@@ -17,7 +17,7 @@ void recalculateAM(int YEAR) {
     }
 }
 
-//increases all the students AMs after "mystudent", that have been registered at the same year , by one
+//increases all the students AMs after "mystudent", who have been registered at the same year , by one
 int firstIsLess(struct student *s1, struct student *s2) {
     int i = strcmp(s1->surname, s2->surname);
     if (i == 0)
@@ -42,7 +42,7 @@ void Insert() {
         return;
     }
 
-    // check if mystudent's year is less than of first student in the list
+    // check if mystudent's year is less than the first student in the list
     if (mystudent->year < lastYearInTheList()) {
         printf("the year is closed for new students\n");
         free(mystudent);
@@ -53,7 +53,7 @@ void Insert() {
     recalculateAM(mystudent->year);
 }
 
-//deletes student information depending to AM
+//deletes student information depending on AM
 void Del(void) {
     if (head == NULL) {
         printf("the list is empty");
@@ -72,7 +72,7 @@ void Del(void) {
         return;
     }
 
-    // check if mystudent's year is less than of first student in the list
+    // check if mystudent's year is less than the first student in the list
     if (tmp->year < lastYearInTheList()) {
         printf("the year is closed. students of previous year cannot be deleted.\n");
         return;
@@ -86,7 +86,7 @@ void Del(void) {
     free(tmp);
 }
 
-//refreshes student information depending to AM
+//refreshes student information depending on AM
 void Refresh(void) {
     if (head == NULL) {
         printf("the list is empty");
